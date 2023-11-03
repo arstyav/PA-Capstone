@@ -430,6 +430,7 @@ g. deleteStaff
 ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/96f51284-d36b-49c2-a0e0-71be9ce013bd)
 
 h. menu1
-- Syntax
+![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/a26ba2e9-7d44-4b01-9bee-854af492496b)
 
+- "private void staffbuttonActionPerformed(java.awt.event.ActionEvent evt) {" 
 
