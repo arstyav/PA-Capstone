@@ -391,7 +391,20 @@ f. deleteMurid
  - Syntax ini memanggil metode find (idMurid) pada objek mm. Metode find ini untuk mencari data murid dengan ID yang sesuai di dalam database. Ini mungkin akan 
    mengisi properti-properti objek mm dengan data murid yang sesuai jika ditemukan.
 
- ![Uploading image.png…]()
+ ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/8c012dd8-c02a-417e-99c0-4901e52418a6)
 
- - 
- 
+ - Syntax metode find selesai dijalankan, syntax ini memanggil metode deleteMurid() pada objek mm. Metode ini mungkin bertanggung jawab untuk menghapus data murid dari database berdasarkan ID murid yang 
+   diberikan.
+   Jika metode deleteMurid() berhasil, maka pesan yang tertampil "Data Successfully Saved!".
+   Jika metode deleteMurid() gagal, maka pesan yang tertampil "Data Failed".
+   
+ ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/486714a6-ce96-4579-bcc7-b5b9b65ed48f)
+
+ - Syntax ini digunakan untuk mengosongkan textbox atau field input yang digunakan untuk mengisi data.
+
+ ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/581c446c-60e5-4f97-baa6-7d18bb2cd583)
+
+g. deleteStaff
+ - Syntax ini membuat objek constructorStaff. Ini adalah objek yang digunakan untuk mengelola data kelas, seperti mencari dan menghapusnya dari database.
+
+
