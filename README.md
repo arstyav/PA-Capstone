@@ -83,7 +83,9 @@ b. Constructormurid
   - public boolean find() adalah metode yang digunakan untuk mencari data murid berdasarkan ID yang diberikan.
     ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/dac5e20a-e9c0-447d-a091-245c3f2fd156)
 
-c. InheritanceKhusus
+c. constructorKelas
+
+d. InheritanceKhusus
 Khusus ini ialah kepanjangan dari kelas khusus yang dimana merupakan subtype dari kelas.
   - Pertama ialah mendeklarasikan package dan mengimpor kelas yang terletak dalam package model. Kelas inheritanceKhusus akan 
     menggunakan kelas kelas sebagai dasar pewarisan.
@@ -100,7 +102,7 @@ Khusus ini ialah kepanjangan dari kelas khusus yang dimana merupakan subtype dar
     metode setter setMateriKhusus digunakan untuk mengatur nilai atribut materiKhusus.
     ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/b222c43a-8ad4-4019-9b98-36936053650f)
 
-d. InheritanceRegular
+e. InheritanceRegular
 Regular ini ialah kepanjangan dari kelas regular yang dimana merupakan subtype dari kelas.
   - Pertama ialah mendeklarasikan package dan mengimpor kelas kelas yang terletak dalam package model. Ini berarti inheritanceRegular akan menggunakan kelas 
     kelas sebagai dasar pewarisan.
@@ -159,8 +161,158 @@ b. staff
   - Syntax ini mendefinisikan getter dan setter untuk atribut-atribut dalam kelas staff. Getter digunakan untuk mendapatkan nilai atribut, sedangkan setter 
     digunakan untuk mengatur nilai atribut.
     ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/d0326eab-adaf-4c4a-b40d-02af1a85b530)
+    
     ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/c0e4372a-5062-4497-a05a-723097fcd9a8)
 
-c. 
+c. kelas
 
+3) Package database
+- Pertama ialah syntax untuk mendefinisikan package yang berisi kelas database. Kemudian, kelas database import dari pustaka Java SQL 
+  (java.sql.*), yang berisi kelas-kelas untuk berinteraksi dengan database.
+  ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/b46eb440-a8a9-475d-a038-8bdd40766be0)
 
+- Syntax ini mendefinisikan beberapa variabel konstan (final) yang digunakan untuk mengkonfigurasi koneksi database. Variabel-variabel ini mencakup:
+  1) dbhost: Menyimpan nama host atau alamat database MySQL (dalam hal ini, "localhost" mengindikasikan bahwa database berjalan di komputer lokal).
+  2) dbname: Menyimpan nama database yang akan digunakan (dalam hal ini, "final").
+  3) username: Menyimpan nama pengguna (username) yang akan digunakan untuk mengakses database (dalam hal ini, "root").
+  4) password: Menyimpan kata sandi yang sesuai dengan pengguna (dalam hal ini, kata sandi kosong, yang tidak aman dan hanya digunakan untuk keperluan 
+     pengembangan).
+  ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/2b0c5e4f-42e3-4390-881a-7a799539e862)
+
+- Syntax ini mendefinisikan beberapa atribut (variabel anggota) yang akan digunakan untuk mengelola koneksi database dan eksekusi pernyataan SQL. Atribut-atribut 
+  ini mencakup:
+  1) connection: Objek Connection yang digunakan untuk mengelola koneksi ke database.
+  2) statement: Objek Statement yang digunakan untuk mengeksekusi pernyataan SQL biasa.
+  3) preparedStatement: Objek PreparedStatement yang digunakan untuk mengeksekusi pernyataan SQL dengan parameter.
+  4) resultSet: Objek ResultSet yang digunakan untuk menyimpan hasil dari pernyataan SQL yang menghasilkan data (seperti SELECT).
+  ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/e05b5d04-991f-4166-90c9-0901eb572533)
+
+- Syntax ini mendefinisikan metode openConnection(), yang digunakan untuk membuka koneksi ke database. Metode ini bekerja dengan cara:
+- Menggunakan DriverManager untuk mendapatkan koneksi ke database MySQL menggunakan parameter yang telah didefinisikan sebelumnya seperti host, nama database, 
+  username, dan password.
+- Jika koneksi berhasil, pesan "Mysql successfully connected" akan ditampilkan di konsol.
+- Jika ada kesalahan koneksi, metode displayErrors(ex) akan dipanggil untuk menampilkan pesan kesalahan.
+![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/289fcc7f-5453-4d38-aeae-175471e01df7)
+
+![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/618127cc-3c5d-49b3-8a92-c61807ad5e98)
+
+- Syntax ini mendefinisikan metode closeConnection(), yang digunakan untuk menutup koneksi ke database dan melepaskan sumber daya. Metode ini bekerja dengan cara:
+- Memeriksa apakah objek resultSet, statement, preparedStatement, dan connection sudah ada (tidak null).
+- Jika ada, metode close() dipanggil untuk menutup masing-masing objek.
+- Kemudian, objek-objek tersebut diatur menjadi null untuk melepaskan sumber daya.
+- Jika ada kesalahan saat menutup objek, metode displayErrors(ex) dipanggil untuk menampilkan pesan kesalahan.
+![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/d018e3b5-383a-4eac-95ab-602019cd31b0)
+
+- Syntax ini mendefinisikan metode displayErrors(ex) yang digunakan untuk menampilkan pesan kesalahan terkait dengan SQL. Metode ini menerima objek SQLException 
+  sebagai argumen dan mencetak informasi kesalahan, seperti pesan kesalahan, kode SQLState, dan kode VendorError, ke konsol.
+![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/532c4599-1411-43ed-ba3d-651fa70f8687)
+
+4) Package View
+a. admin
+ - Kedua variabel ini digunakan untuk mengambil username dan password yang dimasukkan oleh admin melalui User Interface (UI). usernameLogin dan     
+   passwordLogin adalah elemen UI yang digunakan untuk memasukkan informasi login. Username diambil sebagai string dari elemen teks, sedangkan password diambil 
+   sebagai string dari elemen password (yang konsepnya lebih aman daripada tipe data String biasa).
+![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/c8429392-cad4-4d7b-86c0-e897c187d8da)
+
+- Syntax ini mendefinisikan pernyataan SQL yang akan digunakan untuk mengambil data dari tabel "admin" berdasarkan username dan password yang sesuai.
+- Variabel conn digunakan untuk menyimpan koneksi database yang telah dibuka sebelumnya.
+![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/3e4c3075-e941-44d6-b872-290e6e7ad85c)
+
+- Syntax ini berada dalam try dan digunakan untuk menjalankan pernyataan SQL ke database. Selanjutnya membuat PreparedStatement (ps) dari koneksi database dan 
+  menyusun menggunakan pernyataan SQL yang telah di definisikan sebelumnya. Kemudian mengisi nilai parameter pertama (?) dengan username dan parameter kedua 
+  dengan password yang sudah diambil dari UI. Setelah itu, mengeksekusi pernyataan SQL dengan executeQuery(), yang menghasilkan objek ResultSet (rs) yang berisi 
+  hasil dari pernyataan SQL.
+![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/db3e2236-6101-4b50-8a28-536d2697b8af)
+
+- Syntax ini memeriksa hasil dari pernyataan SQL yang dijalankan. Jika rs.next() mengembalikan true, ini berarti ada data di dalam tabel "admin" berdasarkan 
+  username dan password yang dimasukkan.
+![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/361271a9-79c6-478d-8c3d-838aa02a9f9d)
+
+- catch menangani penanganan kesalahan yang mungkin terjadi selama eksekusi pernyataan SQL. Jika terjadi kesalahan akan muncul pesan kesalahan yaitu "Data 
+  failed!"
+- finally digunakan untuk memastikan bahwa koneksi database ditutup.
+![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/d894050a-b4da-4cca-a886-1384a75fa77e)
+
+b. createKelas 
+ - Syntax ini membuat objek constructorKelas yang merupakan kelas yang digunakan untuk mengelola data kelas.
+ ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/9e49fe5d-4496-416e-be59-8d2b8fe2862d)
+
+ - Syntax ini untuk mengambil teks dari elemen UI dengan nama num dan mengonversinya menjadi integer.
+   ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/eb22f5f2-ed17-4b74-8215-b21f40982ab5)
+
+ - Syntax ini untuk mengambil teks dari elemen UI dengan nama capacity dan mengonversinya menjadi integer.
+ ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/a4d0617b-eece-4383-8a7d-b4894e9e62a1)
+
+ - Syntax ini untuk mengisi properti objek ck dengan nilai-nilai yang diambil dari elemen UI.
+    1) ck.namaKelas diisi dengan teks dari elemen UI dengan nama name.
+    2) ck.jumlahMurid diisi dengan nilai kpInt yang telah diambil sebelumnya.
+    3) ck.kapasitas diisi dengan nilai jmlhInt yang telah diambil sebelumnya.
+    4) ck.metodePengajaran diisi dengan teks dari elemen UI dengan nama study.
+ ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/c01364ee-4bfe-4ae5-a710-e7d205e925f4)
+
+ - Syntax ini memanggil metode create() pada objek ck. Metode create() ini untuk menyimpan data kelas ke dalam database.
+   Jika metode create() berhasil, maka pesan yang tertampil "Data Successfully Saved!".
+   Jika metode create() gagal, maka pesan yang tertampil "Data Failed".
+ ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/9b4fdc68-aa83-4399-87fa-261f55fbe2e5)
+
+ - Baris ini digunakan untuk mengosongkan textbox atau field input yang digunakan untuk mengisi data.
+ ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/7bcf33d7-11a2-4b2f-9f81-801d5f822d99)
+
+c. createMurid
+ - Syntax ini untuk membuat objek constructormurid yang merupakan kelas yang digunakan untuk mengelola data murid.
+ ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/aa270f42-59d8-4810-9e97-d5047dbb70ca)
+
+ - Syntax ini mengambil teks dari elemen UI dengan nama nameMurid, DOBMurid, alamatMurid, parentsMurid, phoneMurid, adminStaff, idClass.
+ ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/4d5b64bc-c9fd-42e0-9957-b5e6c74fc536)
+
+ - Syntax ini memanggil metode create() pada objek cm. Metode create() ini untuk menyimpan data murid ke dalam database.
+   Jika metode create() berhasil, maka pesan yang tertampil "Data Successfully Saved!".
+   Jika metode create() gagal, maka pesan yang tertampil "Data Failed".
+ ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/9ed075a0-d175-4ddc-8019-0f41f650696e)
+
+ - Syntax ini digunakan untuk mengosongkan textbox atau field input yang digunakan untuk mengisi data.
+ ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/a8aa9964-0e34-400e-ab6e-7e9462d96661)
+
+d. createStaff
+ - Syntax ini untuk membuat objek constructorStaff yang merupakan kelas yang digunakan untuk mengelola data staff.
+ ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/e91ad784-0d92-4e2b-8764-337606273119)
+
+ - Syntax ini mengambil teks dari elemen UI dengan nama name, address, phone, occation.
+ ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/2efab9c0-e044-470d-a2d8-9e1eaa414c66)
+
+ - Syntax ini memanggil metode create() pada objek st. Metode create() ini untuk menyimpan data staf ke dalam database.
+   Jika metode create() berhasil, maka pesan yang tertampil "Data Successfully Saved!".
+   Jika metode create() gagal, maka pesan yang tertampil "Data Failed".
+ ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/b2c0020d-4b98-4c76-b531-3c20e64f2c56)
+
+ - Syntax ini digunakan untuk mengosongkan textbox atau field input yang digunakan untuk mengisi data.
+ ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/265ece73-c59d-440d-9a93-2ce13b8f448c)
+
+e. deleteKelas 
+ - Syntax ini membuat objek constructorKelas. Ini adalah objek yang digunakan untuk mengelola data kelas, seperti mencari dan menghapusnya dari database.
+ ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/a1c929a0-e79b-422c-8ceb-1bb3096289c0)
+
+ - Syntax ini mengambil teks yang dimasukkan oleh admin melalui elemen UI dengan nama idclass. Ini akan digunakan sebagai ID kelas yang akan dihapus.
+ ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/e05b1c60-c511-4665-959f-8aafec75617e)
+
+ - Syntax ini memanggil metode find(idKelas) pada objek ck. Metode find ini untuk mencari data kelas dengan ID yang sesuai di dalam 
+   database.
+ ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/da4c1adc-61df-4ed2-940a-937522a227f1)
+
+ - Syntax ini memanggil metode deleteKelas(idKelas) pada objek ck. Metode ini untuk menghapus data kelas dari database berdasarkan ID kelas yang diberikan. 
+   Jika metode create() berhasil, maka pesan yang tertampil "Data Successfully Saved!".
+   Jika metode create() gagal, maka pesan yang tertampil "Data Failed".
+ ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/adcfc965-19b9-42eb-916d-52302914d8d1)
+
+ - Syntax ini digunakan untuk mengosongkan textbox atau field input yang digunakan untuk mengisi data.
+ ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/43a0df4a-07a3-4cf6-9a33-5bbd72521e75)
+
+f. deleteMurid
+ - Syntax ini membuat objek constructormurid. Ini adalah objek yang digunakan untuk mengelola data kelas, seperti mencari dan menghapusnya dari database.
+ ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/0ac4a434-fd93-4e6a-b645-2a20ec5d13cd)
+
+ - Syntax ini mengambil teks yang dimasukkan oleh pengguna melalui elemen UI dengan nama deleteId. Nilai ini digunakan sebagai ID murid yang akan dihapus.
+ ![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/535c62fb-23e6-44ea-8919-8091afb3a37e)
+
+ 
+ 
