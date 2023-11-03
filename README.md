@@ -407,4 +407,29 @@ f. deleteMurid
 g. deleteStaff
  - Syntax ini membuat objek constructorStaff. Ini adalah objek yang digunakan untuk mengelola data kelas, seperti mencari dan menghapusnya dari database.
 
+![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/67b8fe44-0972-4d4e-9038-785bebfb0272)
+
+- Syntax ini mengambil teks yang dimasukkan oleh pengguna melalui elemen UI yang mungkin memiliki nama "deleteStaff". Nilai teks ini kemudian disimpan dalam variabel deleteId. Ini kemungkinan adalah ID staf yang akan dihapus.
+
+![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/5f027d9d-14f1-4d9a-974f-67edf0ef57cf)
+
+- Syntax ini memanggil metode "find" pada objek "st" dengan argumen "deleteId". Metode "find" mungkin bertanggung jawab untuk mencari data staf dalam database yang sesuai dengan ID yang diberikan. Jika data ditemukan, properti objek "st" mungkin akan diisi dengan data staff yang sesuai.
+
+![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/6f7f9a84-1a36-4852-b660-eb2ab8f75281)
+
+- Ini adalah awal dari struktur pengkondisian. Kode ini memeriksa apakah metode delete pada objek st berhasil dieksekusi.
+
+![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/24c3c4c2-f570-489c-9a8b-2fc24cc8f975)
+
+- Jika metode delete berhasil (mungkin mengembalikan true), maka JOptionPane digunakan untuk menampilkan pesan "Data Successfully Delete!" kepada pengguna. Selain itu, elemen UI "deleteStaff" juga dikosongkan dengan mengeset teksnya menjadi string kosong.
+
+![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/94a1accb-2c5c-4ac9-a124-80d37e6383d0)
+
+- Ini adalah blok yang akan dieksekusi jika metode delete mengembalikan false. Dalam konteks ini, blok ini akan dijalankan jika penghapusan data staf gagal. Jika penghapusan gagal, maka pesan "Data Failed" akan ditampilkan kepada pengguna menggunakan JOptionPane.
+
+![image](https://github.com/PA-Capstone-25/PA-Capstone/assets/122219678/96f51284-d36b-49c2-a0e0-71be9ce013bd)
+
+h. menu1
+- Syntax
+
 
